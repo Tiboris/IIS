@@ -1,0 +1,101 @@
+body {
+	background: #bdc3c7;
+	margin: 0px;
+	min-height: 100px;
+}
+nav {
+	background: #3498db;
+	height: 55px;
+	color: white;
+	padding-top: 10px;
+}
+nav ul {
+	margin: 0px;
+	list-style-type: none;
+}
+nav ul li {
+	float: left;
+	padding: 0px 25px;
+	margin: 0px;
+	font-size: 17px;
+	font-family: Helvetica;
+	height: 55px;
+	line-height: 3.8em;
+}
+nav a {
+	color: white;
+	text-decoration: none;
+}
+nav ul li:hover, .active {
+	background: #2980b9;
+}
+section {
+	background: #ecf0f1;
+	padding: 30px 0px;
+	font-family: Helvetica;
+	color: #34495e;
+}
+article {
+	background: #ecf0f1;
+	width: 924px;
+	min-height: 400px;
+	float: left;
+}
+footer {
+	background: #bdc3c7;
+	height: 40px;
+	color: #34495e;
+	font-family: Helvetica;
+	font-size: 12px;
+	margin-top: 20px;
+	text-align: center;
+}
+h1 {
+	color: #e74c3c;
+	font-family: Helvetica;
+}
+h3 {
+	color: #e74c3c;
+	font-family: Helvetica;
+}
+h4 {
+	color: #2980b9;
+	font-family: Helvetica;
+}
+hr { 
+	display: block; 
+	height: 1px;
+	border: 0; 
+	border-top: 2px solid #3498db;
+	margin: 1em 0; 
+	padding: 0; }
+.clear {
+	clear: both;
+}
+#center {
+	margin: 0px auto;
+	width: 1034px;
+}
+#logo {
+	background: url('images/cheese-flat.png') no-repeat;
+	width: 300px;
+	height: 55px;
+	float: left;
+	margin: 0px 0px 0px 20px;
+}
+#logo h1 {
+	color: #ecf0f1;
+	font-size: 20px;
+	margin: 14px 0px 0px 80px;
+}
+.produkty {
+	float: left;
+}
+#home {
+	color: #2c3e50;
+	text-align: center;
+	font-size: 13pt
+}
+a {
+	text-decoration: none;
+}

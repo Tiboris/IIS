@@ -1,0 +1,1190 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"session",
+				"session_decode"
+			],
+			[
+				"if",
+				"if\tif …"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"cha",
+				"chaddr_arr"
+			],
+			[
+				"D",
+				"DEBUG"
+			],
+			[
+				"add",
+				"address"
+			],
+			[
+				"edn",
+				"endl"
+			],
+			[
+				"ad",
+				"addr"
+			],
+			[
+				"DHCP",
+				"DHCPNAK"
+			],
+			[
+				"pac",
+				"packet"
+			],
+			[
+				"fin",
+				"find_by_mac"
+			],
+			[
+				"pa",
+				"ack_packet"
+			],
+			[
+				"DHC",
+				"DHCPRELEASE"
+			],
+			[
+				"me",
+				"message_type"
+			],
+			[
+				"print",
+				"printf\tprintf …"
+			],
+			[
+				"in",
+				"inet_ntoa"
+			],
+			[
+				"inet_",
+				"inet_addr"
+			],
+			[
+				"RE",
+				"REBINDING"
+			],
+			[
+				"end",
+				"endl"
+			],
+			[
+				"OPT",
+				"OPT_REQ_IP"
+			],
+			[
+				"req",
+				"req_addr"
+			],
+			[
+				"ch",
+				"check_ip_addr"
+			],
+			[
+				"off",
+				"offered_address"
+			],
+			[
+				"a",
+				"addr"
+			],
+			[
+				"usi",
+				"unsigned"
+			],
+			[
+				"for",
+				"forv\tVector For Loop"
+			],
+			[
+				"er",
+				"erase"
+			],
+			[
+				"addre",
+				"address"
+			],
+			[
+				"mem",
+				"memcpy"
+			],
+			[
+				"sta",
+				"start"
+			],
+			[
+				"clie",
+				"client_mac"
+			],
+			[
+				"get",
+				"get"
+			],
+			[
+				"fo",
+				"for\tFor Loop"
+			],
+			[
+				"ar",
+				"array"
+			],
+			[
+				"uint_",
+				"uint32_t"
+			],
+			[
+				"buff",
+				"buff_end"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"ui",
+				"uint32_t"
+			],
+			[
+				"t",
+				"t_start"
+			],
+			[
+				"tm_",
+				"tm_end"
+			],
+			[
+				"t_",
+				"t_end"
+			],
+			[
+				"time",
+				"timer"
+			],
+			[
+				"tim",
+				"time_t"
+			],
+			[
+				"ack",
+				"ack_packet"
+			],
+			[
+				"che",
+				"check_ip_addr"
+			],
+			[
+				"OP",
+				"OPT_REQ_IP"
+			],
+			[
+				"SER",
+				"OPT_SERVER_ID"
+			],
+			[
+				"is",
+				"is_server_id"
+			],
+			[
+				"ser",
+				"server_id"
+			],
+			[
+				"begi",
+				"begin"
+			],
+			[
+				"offe",
+				"offered_address"
+			],
+			[
+				"addr",
+				"addr"
+			],
+			[
+				"dhcp",
+				"dhcp_packet"
+			],
+			[
+				"socke",
+				"socket_handle"
+			],
+			[
+				"be",
+				"begin"
+			],
+			[
+				"po",
+				"pool"
+			],
+			[
+				"u",
+				"uint32_t"
+			],
+			[
+				"firt",
+				"first"
+			],
+			[
+				"del",
+				"delim2"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"n",
+				"network"
+			],
+			[
+				"fir",
+				"first"
+			],
+			[
+				"address",
+				"addresses"
+			],
+			[
+				"adre",
+				"addresses"
+			],
+			[
+				"mess",
+				"message_type"
+			],
+			[
+				"uin",
+				"uint32_t"
+			],
+			[
+				"de",
+				"def\t#ifndef … #define … #endif"
+			],
+			[
+				"ip",
+				"ip_addr"
+			],
+			[
+				"BO",
+				"BOOTPREPLY"
+			],
+			[
+				"BOO",
+				"BOOTP"
+			],
+			[
+				"def",
+				"define"
+			],
+			[
+				"by",
+				"byte"
+			],
+			[
+				"inet",
+				"inet_addr"
+			],
+			[
+				"b",
+				"begin"
+			],
+			[
+				"unsi",
+				"unsigned"
+			],
+			[
+				"size",
+				"sizeof"
+			],
+			[
+				"str",
+				"strcpy"
+			],
+			[
+				"dhc",
+				"dhcp_packet"
+			],
+			[
+				"soc",
+				"socket_handle"
+			],
+			[
+				"op",
+				"options"
+			],
+			[
+				"ofe",
+				"offer_packet"
+			],
+			[
+				"POR",
+				"SERVER_PORT"
+			],
+			[
+				"fla",
+				"flags"
+			],
+			[
+				"so",
+				"sockaddr_in"
+			],
+			[
+				"uint",
+				"uint32_t"
+			],
+			[
+				"cl",
+				"client"
+			],
+			[
+				"chce",
+				"checkArgs"
+			],
+			[
+				"Ser",
+				"SERVER_PORT"
+			],
+			[
+				"socket",
+				"socketHandle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/wamp/www/SXT/ponuka.sql",
+			"settings":
+			{
+				"buffer_size": 1946,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1832,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "home.php",
+			"settings":
+			{
+				"buffer_size": 345,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "login.php",
+			"settings":
+			{
+				"buffer_size": 1584,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "logout.php",
+			"settings":
+			{
+				"buffer_size": 121,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "welcome.php",
+			"settings":
+			{
+				"buffer_size": 66,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "manage.php",
+			"settings":
+			{
+				"buffer_size": 352,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "session.php",
+			"settings":
+			{
+				"buffer_size": 368,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.php",
+			"settings":
+			{
+				"buffer_size": 214,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/wamp/www/SXT/index.php",
+			"settings":
+			{
+				"buffer_size": 3201,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/wamp/www/SXT/kontakt.php",
+			"settings":
+			{
+				"buffer_size": 742,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/wamp/www/SXT/objednavka.php",
+			"settings":
+			{
+				"buffer_size": 5273,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 1399,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 140.0,
+		"last_filter": "ss php",
+		"selected_items":
+		[
+			[
+				"ss php",
+				"Set Syntax: PHP"
+			],
+			[
+				"ss htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			],
+			[
+				"ss C",
+				"Set Syntax: C"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 382.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp64/www/iis"
+	],
+	"file_history":
+	[
+		"/C/wamp64/logs/mysql.log",
+		"/C/wamp64/www/iis/home.php",
+		"/D/wamp/www/SXT/home.php",
+		"/D/wamp/www/SXT/style.css",
+		"/C/Users/pato2/Downloads/argparser.cpp",
+		"/C/Users/pato2/Downloads/OpenDHCPServerSourceV1.64.zip",
+		"/D/pato/VUT/5sem/ISA/dserver/sftp-config.json",
+		"/D/pato/VUT/1sem/IZP/proj3.c",
+		"/D/pato/VUT/1sem/IZP/proj3.c+tests.c",
+		"/D/pato/VUT/4sem/ipk/projekt2/proj2/server.cpp",
+		"/C/Users/pato2/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/pato2/Desktop/kn.py"
+	],
+	"find":
+	{
+		"height": 70.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"center",
+			"tr",
+			"loaves",
+			"info",
+			"kontakt",
+			"hladat",
+			"objednat",
+			"pridat_syr",
+			"objednavka",
+			"ponuka",
+			"novinky",
+			"center",
+			"uint32_t addr",
+			"SOURCE",
+			"EXECUTABLES",
+			"SOURCE_SERVER",
+			"find_by_mac",
+			"request ",
+			"disc_packet",
+			"offer_packet",
+			"addr",
+			"neACKuje",
+			"clear",
+			"arr",
+			"del_by_mac",
+			"LEASE_TIME",
+			"pool.push_back",
+			"hex",
+			"3600",
+			"ack",
+			"err",
+			"renew",
+			"check_ip_addr",
+			"buff",
+			"ne",
+			"check_ip_addr",
+			"pool",
+			"excluded",
+			"iterator",
+			"ccc",
+			"uint32_t",
+			"lease",
+			"start",
+			"ack_packet",
+			"server_id",
+			"inet_addr(\"192.168.0.255\")",
+			"found",
+			"localtime",
+			"put_time",
+			"asctime",
+			"addr->broadcast",
+			"addr",
+			"disc_packet",
+			"addr",
+			"TRUE",
+			"FALSE",
+			"offer_packet",
+			"is_server_id",
+			"i",
+			"addr",
+			"offer",
+			"vec",
+			"excluded",
+			"network",
+			",",
+			"packet",
+			"rege",
+			"check_args",
+			"disc_packet",
+			"struct in_addr",
+			"uint32_t",
+			"test",
+			"struct in_addr",
+			"14",
+			"addr",
+			"ADDR",
+			"addr",
+			"unsigend",
+			"usnigned",
+			"inet_aton",
+			"strcpy",
+			"offer",
+			"append",
+			"disc_packet",
+			"sa",
+			"sendto",
+			"socketHandle",
+			"uint16_t",
+			"uint32_t",
+			"v",
+			"int",
+			"v",
+			"xid",
+			"ciaddr",
+			"(message.substr(0, 1).c_str()",
+			"cout",
+			"s",
+			"lenght",
+			"len",
+			"strlen",
+			"sizeof",
+			"length",
+			"client",
+			"length",
+			"client",
+			"str",
+			"STR",
+			"str",
+			"sa",
+			"sa_client",
+			"dserver"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"true",
+			"false"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/wamp/www/SXT/ponuka.sql",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SQL/SQL.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 756.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1832,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								320,
+								320
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								237
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "logout.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "welcome.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								66,
+								66
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "manage.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 352,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								352,
+								352
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "session.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 368,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								51,
+								51
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 214,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/D/wamp/www/SXT/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/D/wamp/www/SXT/kontakt.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 742,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								723,
+								733
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/D/wamp/www/SXT/objednavka.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5273,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								350,
+								350
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1342,
+								1342
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1743.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 66.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 150.0
+	},
+	"pinned_build_system": "",
+	"project": "iis.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
