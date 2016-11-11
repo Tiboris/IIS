@@ -27,23 +27,25 @@
 	}
 ?>
 <h1>Vaša objednávka</h1>
-<table class="sortable">
+<table>
 	<tr>
-		<td>Objednávateľ: </td>
+		<td><b>Objednávateľ: </b></td>
 		<td><?php echo "${_SESSION['meno']}  ${_SESSION['priezvisko']}"?></td>
 	</tr>
 	<tr>
-		<td>Dodávateľ: </td>
+		<td><b>Dodávateľ: </b></td>
 		<td><?php echo $_SESSION['id_dod'] ?></td>
 	</tr>
 	<tr>
-		<td>ID objednávky: </td>
+		<td><b>ID objednávky: </b></td>
 		<td><?php echo $last_id ?></td>
 	</tr>
 	<tr>
-		<td>SUMA: </td>
+		<td><b>SUMA: </b></td>
 		<td><?php echo $_SESSION['suma'] ?>&euro;</td>
 	</tr>
+</table>
+<table class="sortable">
 	<tr>
 		<th>Syr</th>
 		<th>Typ</th>
