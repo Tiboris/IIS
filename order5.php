@@ -1,3 +1,4 @@
+<script src="sorttable.js"></script>
 <?php
 	include('session.php');
 	$_SESSION['datum'] = $_POST['datum'];
@@ -26,7 +27,7 @@
 	}
 ?>
 <h1>Vaša objednávka</h1>
-<table>
+<table class="sortable">
 	<tr>
 		<td>Objednávateľ: </td>
 		<td><?php echo "${_SESSION['meno']}  ${_SESSION['priezvisko']}"?></td>
