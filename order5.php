@@ -1,3 +1,4 @@
+<script src="sorttable.js"></script>
 <?php
 	include('session.php');
 	$_SESSION['datum'] = $_POST['datum'];
