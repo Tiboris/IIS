@@ -99,3 +99,10 @@ hr {
 a {
 	text-decoration: none;
 }
+
+table.sortable thead {
+    background-color:#3498db;
+    color:#ecf0f1;
+    font-weight: bold;
+    cursor: default;
+}

@@ -32,7 +32,7 @@
 				<li <?php if($_GET['page']=="add"){ echo "class='active'";} ?> ><a href="?page=add">Pridať syr</a></li>
 				<li <?php if($_GET['page']=="order"){ echo "class='active'";} ?> ><a href="?page=order"> Objednať</a></li>
 				<li <?php if($_GET['page']=="find"){ echo "class='active'";} ?> ><a href="?page=find"> Hľadať</a></li>
-				<li <?php if($_GET['page']=="loaves"){ echo "class='active'";} ?> ><a href="?page=loaves"> Bochníky</a></li>
+				<li <?php if($_GET['page']=="loaves" or $_GET['page']=="loaf"){ echo "class='active'";} ?> ><a href="?page=loaves"> Bochníky</a></li>
 				<li <?php if(in_array($_GET['page'], array("manage", "add_employee", "fire_employee", "change_salary"))){ echo "class='active'";} ?> ><a href="?page=manage"> Správa zamestnancov</a></li>
 				<?php if (isset($_SESSION['login_user'])) { ?>
 					<li <?php if($_GET['page']=="logout"){ echo "class='active'";} ?> ><a href="?page=logout"> Logout</a></li>
