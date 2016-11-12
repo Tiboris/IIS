@@ -20,6 +20,7 @@
 			$result = mysqli_query($db, $sql);
 			$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 		}
+		echo "Zamestnanec s rodným číslom ${_POST['employees']} prepustený!<br>";
 	}
 ?>
 <form action="" method="POST">

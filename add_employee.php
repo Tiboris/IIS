@@ -1,3 +1,4 @@
+<h1>Pridať zamestanca</h1>
 <?php 
 	include('session.php');
 	if ($_SESSION['veduci'] != '1') {
@@ -9,14 +10,14 @@
 	if (isset($_POST['submit'])) {
 		if ($_POST['veduci'] != 1) {$_POST['veduci'] = 0;}
 		unset($_POST['submit']);
-			$sql = "INSERT INTO zamestnanci (r_cislo, login, pass, meno, priezvisko, ulica, cislo, mesto, psc, plat, veduci) VALUES ('${_POST['r_cislo']}', '${_POST['login']}', '${_POST['pass']}', '${_POST['meno']}', '${_POST['priezvisko']}', '${_POST['ulica']}', ${_POST['cislo']}, '${_POST['mesto']}', '${_POST['psc']}', ${_POST['plat']}, ${_POST['veduci']})";
-			$result = mysqli_query($db, $sql);
-			$sql = "SELECT * FROM zamestnanci";
-			$result = mysqli_query($db, $sql);
-			$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		$sql = "INSERT INTO zamestnanci (r_cislo, login, pass, meno, priezvisko, ulica, cislo, mesto, psc, plat, veduci) VALUES ('${_POST['r_cislo']}', '${_POST['login']}', '${_POST['pass']}', '${_POST['meno']}', '${_POST['priezvisko']}', '${_POST['ulica']}', ${_POST['cislo']}, '${_POST['mesto']}', '${_POST['psc']}', ${_POST['plat']}, ${_POST['veduci']})";
+		$result = mysqli_query($db, $sql);
+		$sql = "SELECT * FROM zamestnanci";
+		$result = mysqli_query($db, $sql);
+		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+		echo "Zamestnanec ${_POST['meno']} ${_POST['priezvisko']} pridaný!<br>";
 	}
 ?>
-<h1>Pridať zamestanca</h1>
 <form action="" method="POST">
 	<table>
 		<tr>
