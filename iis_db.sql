@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hostiteľ: 127.0.0.1
--- Čas generovania: Ne 06.Nov 2016, 14:22
+-- Čas generovania: So 12.Nov 2016, 19:49
 -- Verzia serveru: 5.7.14
 -- Verzia PHP: 5.6.25
 
@@ -36,7 +36,7 @@ CREATE TABLE `bochniky` (
   `id_syr` int(11) NOT NULL,
   `krajina` char(2) NOT NULL,
   `id_obj` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `bochniky`
@@ -58,7 +58,21 @@ INSERT INTO `bochniky` (`id_bochnika`, `poc_hmot`, `akt_hmot`, `tuk`, `trvanlivo
 (15, '10.00', '10.00', '49', '2016-11-30', 'predajna', 1, 'SK', 13),
 (16, '10.00', '10.00', '49', '2016-11-30', 'predajna', 6, 'NL', 13),
 (17, '100.00', '100.00', '50', '2016-11-24', 'sklad', 1, 'FR', 14),
-(18, '100.00', '100.00', '50', '2016-11-20', 'sklad', 6, 'SK', 14);
+(18, '100.00', '100.00', '50', '2016-11-20', 'sklad', 6, 'SK', 14),
+(19, '8.00', '8.00', '28', '2016-11-11', 'predajna', 2, 'NL', 15),
+(20, '8.00', '8.00', '38', '2016-11-30', 'predajna', 6, 'SK', 15),
+(21, '8.00', '8.00', '28', '2016-11-11', 'predajna', 2, 'NL', 16),
+(22, '8.00', '8.00', '38', '2016-11-30', 'predajna', 6, 'SK', 16),
+(23, '8.00', '8.00', '28', '2016-11-11', 'predajna', 2, 'NL', 17),
+(24, '8.00', '8.00', '38', '2016-11-30', 'predajna', 6, 'SK', 17),
+(25, '8.00', '8.00', '28', '2016-11-11', 'predajna', 2, 'NL', 18),
+(26, '8.00', '8.00', '38', '2016-11-30', 'predajna', 6, 'SK', 18),
+(27, '8.00', '8.00', '28', '2016-11-11', 'predajna', 2, 'NL', 19),
+(28, '8.00', '8.00', '38', '2016-11-30', 'predajna', 6, 'SK', 19),
+(29, '5.00', '5.00', '5', '2019-01-13', 'predajna', 2, 'SK', 20),
+(30, '5.00', '5.00', '5', '2013-08-09', 'predajna', 6, 'SK', 20),
+(31, '4.00', '4.00', '4', '2019-01-13', 'predajna', 6, 'SK', 21),
+(32, '9.00', '9.00', '9', '2019-01-13', 'predajna', 6, 'SK', 22);
 
 -- --------------------------------------------------------
 
@@ -80,7 +94,7 @@ CREATE TABLE `dodavatelia` (
   `ico` varchar(8) DEFAULT NULL,
   `dic` char(10) DEFAULT NULL,
   `ic_dph` char(12) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `dodavatelia`
@@ -108,20 +122,20 @@ CREATE TABLE `krajiny` (
   `skratka` char(2) NOT NULL,
   `nazov` varchar(20) NOT NULL,
   `info` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `krajiny`
 --
 
 INSERT INTO `krajiny` (`skratka`, `nazov`, `info`) VALUES
-('SK', 'Slovensko', 'Krajina z pod Tatier'),
 ('CZ', 'Česká Republika', 'Chodia často do Tatier'),
 ('DE', 'Nemecko', 'Hlavne mesto Berlin'),
-('NL', 'Holandsko', '420'),
-('IT', 'Taliansko', 'Super PIZZA'),
 ('FR', 'Francúzsko', 'Super Bagety'),
-('GB', 'Anglicko', 'Opacni ludia');
+('GB', 'Anglicko', 'Opacni ludia'),
+('IT', 'Taliansko', 'Super PIZZA'),
+('NL', 'Holandsko', '420'),
+('SK', 'Slovensko', 'Krajina z pod Tatier');
 
 -- --------------------------------------------------------
 
@@ -135,7 +149,7 @@ CREATE TABLE `objednavky` (
   `suma` decimal(19,4) NOT NULL,
   `r_cislo` varchar(11) NOT NULL,
   `id_dod` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `objednavky`
@@ -147,11 +161,19 @@ INSERT INTO `objednavky` (`id_obj`, `datum`, `suma`, `r_cislo`, `id_dod`) VALUES
 (3, '2016-03-04', '1278.9900', '530919/907', 4),
 (4, '2016-02-24', '704.0000', '950217/9720', 6),
 (5, '2015-12-12', '284.7700', '950217/9775', 8),
-(12, '2016-11-06', '9999.0000', '123456/1234', 2),
-(11, '2016-11-06', '999.0000', '123456/1234', 1),
 (10, '2016-11-06', '10.0000', '123456/1234', 1),
+(11, '2016-11-06', '999.0000', '123456/1234', 1),
+(12, '2016-11-06', '9999.0000', '123456/1234', 2),
 (13, '2016-11-06', '100.0000', '123456/1234', 2),
-(14, '2016-11-06', '1000.0000', '123456/1234', 1);
+(14, '2016-11-06', '1000.0000', '123456/1234', 1),
+(15, '2016-11-11', '100.0000', '530919/907', 1),
+(16, '2016-11-11', '100.0000', '530919/907', 1),
+(17, '2016-11-11', '100.0000', '530919/907', 1),
+(18, '2016-11-11', '100.0000', '530919/907', 1),
+(19, '2016-11-11', '100.0000', '530919/907', 1),
+(20, '2016-11-12', '5.0000', '530919/907', 1),
+(21, '2019-01-13', '9.0000', '530919/907', 1),
+(22, '2019-01-13', '2000.0000', '530919/907', 1);
 
 -- --------------------------------------------------------
 
@@ -162,7 +184,7 @@ INSERT INTO `objednavky` (`id_obj`, `datum`, `suma`, `r_cislo`, `id_dod`) VALUES
 CREATE TABLE `ponukaju` (
   `id_dod` int(11) NOT NULL,
   `id_syr` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `ponukaju`
@@ -170,19 +192,19 @@ CREATE TABLE `ponukaju` (
 
 INSERT INTO `ponukaju` (`id_dod`, `id_syr`) VALUES
 (1, 1),
-(1, 2),
-(1, 6),
-(1, 9),
 (2, 1),
-(2, 6),
-(4, 4),
+(1, 2),
 (5, 3),
-(6, 10),
-(7, 8),
-(7, 11),
+(4, 4),
 (8, 5),
 (9, 5),
-(10, 9);
+(1, 6),
+(2, 6),
+(7, 8),
+(1, 9),
+(10, 9),
+(6, 10),
+(7, 11);
 
 -- --------------------------------------------------------
 
@@ -195,7 +217,7 @@ CREATE TABLE `syry` (
   `nazov` varchar(30) NOT NULL,
   `typ` varchar(20) NOT NULL,
   `zivocich` varchar(20) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `syry`
@@ -217,27 +239,6 @@ INSERT INTO `syry` (`id_syr`, `nazov`, `typ`, `zivocich`) VALUES
 -- --------------------------------------------------------
 
 --
--- Štruktúra tabuľky pre tabuľku `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `login` varchar(32) NOT NULL,
-  `pass` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Sťahujem dáta pre tabuľku `users`
---
-
-INSERT INTO `users` (`id`, `login`, `pass`) VALUES
-(1, 'admin', 'nimda'),
-(2, 'user1', 'pass1'),
-(3, 'user2', 'pass2');
-
--- --------------------------------------------------------
-
---
 -- Štruktúra tabuľky pre tabuľku `zamestnanci`
 --
 
@@ -247,23 +248,23 @@ CREATE TABLE `zamestnanci` (
   `pass` varchar(32) NOT NULL,
   `meno` varchar(20) NOT NULL,
   `priezvisko` varchar(20) NOT NULL,
-  `ulica` varchar(30) NOT NULL,
-  `cislo` int(11) NOT NULL,
-  `mesto` varchar(30) NOT NULL,
-  `psc` char(5) NOT NULL,
+  `ulica` varchar(30) DEFAULT NULL,
+  `cislo` int(11) DEFAULT NULL,
+  `mesto` varchar(30) DEFAULT NULL,
+  `psc` char(5) DEFAULT NULL,
   `plat` int(11) NOT NULL,
   `veduci` bit(1) NOT NULL DEFAULT b'0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `zamestnanci`
 --
 
 INSERT INTO `zamestnanci` (`r_cislo`, `login`, `pass`, `meno`, `priezvisko`, `ulica`, `cislo`, `mesto`, `psc`, `plat`, `veduci`) VALUES
+('123456/1234', 'tiboris', 'a', 'Tibor', 'Dudlak', 'Kolejni', 9, 'Brno', '99999', 165123, b'1'),
 ('530919/907', 'admin', 'nimda', 'Peter', 'Sveter', 'Rododendron', 2, 'Brno', '61200', 599, b'1'),
-('950217/9775', 'miro', 'aaa', 'Miroslav', 'Sud', 'Hujíčkova', 87, 'Brno', '61200', 12, b'0'),
 ('950217/9720', 'peto', 'aaa', 'Peter', 'Klobása', 'Sta?kova', 2, 'Brno', '60200', 8, b'0'),
-('123456/1234', 'tiboris', 'a', 'Tibor', 'Dudlak', 'Kolejni', 9, 'Brno', '99999', 165123, b'1');
+('950217/9775', 'miro', 'aaa', 'Miroslav', 'Sud', 'Hujíčkova', 87, 'Brno', '61200', 12, b'0');
 
 --
 -- Kľúče pre exportované tabuľky
@@ -313,13 +314,6 @@ ALTER TABLE `syry`
   ADD PRIMARY KEY (`id_syr`);
 
 --
--- Indexy pre tabuľku `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `login` (`login`);
-
---
 -- Indexy pre tabuľku `zamestnanci`
 --
 ALTER TABLE `zamestnanci`
@@ -334,7 +328,7 @@ ALTER TABLE `zamestnanci`
 -- AUTO_INCREMENT pre tabuľku `bochniky`
 --
 ALTER TABLE `bochniky`
-  MODIFY `id_bochnika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_bochnika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT pre tabuľku `dodavatelia`
 --
@@ -344,17 +338,12 @@ ALTER TABLE `dodavatelia`
 -- AUTO_INCREMENT pre tabuľku `objednavky`
 --
 ALTER TABLE `objednavky`
-  MODIFY `id_obj` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_obj` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT pre tabuľku `syry`
 --
 ALTER TABLE `syry`
   MODIFY `id_syr` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
---
--- AUTO_INCREMENT pre tabuľku `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
