@@ -96,13 +96,21 @@ hr {
 	text-align: center;
 	font-size: 13pt
 }
+#error {
+	font-size: 11px;
+	color: #cc0000;
+	margin-top: 10px;
+}
+#login {
+	margin: 30px;
+}
 a {
 	text-decoration: none;
 }
 
 table.sortable thead {
-    background-color:#3498db;
-    color:#ecf0f1;
-    font-weight: bold;
-    cursor: default;
+	background-color:#3498db;
+	color:#ecf0f1;
+	font-weight: bold;
+	cursor: default;
 }

@@ -19,7 +19,7 @@
 					<td> tuk: </td>
 					<td><input type="number" name="tuk[]" min="1" max="100" required="yes" title="percento tuku"> % *</td>
 					<td> trvanlivosť: </td>
-					<td><input type="date" min="1970-01-01" max="2100-01-01"  name="trvan[]" required="yes" title="datum minamalnej trvanlivosti"> *</td>
+					<td><input type="date" min="1970-01-01" max="2100-01-01" name="trvan[]" required="yes" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" placeholder="YYYY-MM-DD"  title="datum minimalnej trvanlivosti vo formate YYYY-MM-DD od 1970-01-01 do 2100-01-01"> *</td>
 					<td> krajina: </td>
 					<td>
 						<select name="krajiny[]" title="krajina pôvodu">

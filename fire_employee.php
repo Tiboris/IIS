@@ -7,22 +7,18 @@
 	$result = mysqli_query($db, $sql);
 	$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	if (isset($_POST['submit'])) {
-		var_dump($_POST);
 		unset($_POST['submit']);
 		$sql = "SELECT login FROM zamestnanci WHERE r_cislo='${_POST['employees']}'";
 		$result = mysqli_query($db, $sql);
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-		var_dump($row);
 		if ($row['login'] == $_SESSION['login_user']) {
 			echo "<h3>Nemôžete vyhodiť sám seba!</h3>";
 		} else {
 			$sql = "DELETE FROM zamestnanci WHERE r_cislo='${_POST['employees']}'";
 			$result = mysqli_query($db, $sql);
-			var_dump($result);
 			$sql = "SELECT * FROM zamestnanci";
 			$result = mysqli_query($db, $sql);
 			$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-			var_dump($rows);
 		}
 	}
 ?>

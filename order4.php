@@ -14,11 +14,11 @@
 	<table>
 		<tr>
 			<td>Dátum objednávky: </td>
-			<td><input type="date" name="datum" min="1970-01-01" max="2100-01-01" title="Dátum objednávky" required="yes"> *</td>
+			<td><input type="date" min="1970-01-01" max="2100-01-01" name="datum" required="yes" pattern="(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))" placeholder="YYYY-MM-DD"  title="datum minimalnej trvanlivosti vo formate YYYY-MM-DD od 1970-01-01 do 2100-01-01"> *</td>
 		</tr>
 		<tr>
 			<td>Suma objednávky: </td>
-			<td><input type="number" name="suma" min="1" title="Suma objednávky" required="yes"> *</td>
+			<td><input type="number" name="suma" min="1" title="Suma objednávky" required="yes"> &euro; *</td>
 		</tr>
 		<tr>
 			<td>Objednať na: </td>

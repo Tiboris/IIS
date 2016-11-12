@@ -34,7 +34,7 @@
 		</tr>
 		<tr>
 			<td>Nový plat: </td>
-			<td><input type="number" name="salary" min="0" max="1000000" placeholder="350" required="yes"> EUR/mesiac</td>
+			<td><input type="number" name="salary" min="0" max="1000000" placeholder="350" required="yes"> EUR/mesiac *</td>
 		</tr>
 	</table>
 	<br>

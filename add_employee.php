@@ -7,15 +7,13 @@
 	$result = mysqli_query($db, $sql);
 	$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	if (isset($_POST['submit'])) {
-		var_dump($_POST);
+		if ($_POST['veduci'] != 1) {$_POST['veduci'] = 0;}
 		unset($_POST['submit']);
 			$sql = "INSERT INTO zamestnanci (r_cislo, login, pass, meno, priezvisko, ulica, cislo, mesto, psc, plat, veduci) VALUES ('${_POST['r_cislo']}', '${_POST['login']}', '${_POST['pass']}', '${_POST['meno']}', '${_POST['priezvisko']}', '${_POST['ulica']}', ${_POST['cislo']}, '${_POST['mesto']}', '${_POST['psc']}', ${_POST['plat']}, ${_POST['veduci']})";
 			$result = mysqli_query($db, $sql);
-			var_dump($result);
 			$sql = "SELECT * FROM zamestnanci";
 			$result = mysqli_query($db, $sql);
 			$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-			var_dump($rows);
 	}
 ?>
 <h1>Pridať zamestanca</h1>
@@ -59,7 +57,7 @@
 		</tr>
 		<tr>
 			<td>Vedúci: </td>
-			<td><input type="number" name="veduci" min="0" max="1" placeholder="0" required="yes"> *</td>
+			<td><input type="checkbox" name="veduci" value="1" required="yes"> *</td>
 		</tr>
 	</table>
 	<br>

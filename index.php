@@ -1,23 +1,24 @@
 <?php
 	if (!isset($_SESSION)) {
 		session_start();
-		// if (isset($_SESSION['time'])) {
-		// 	if(time() - $_SESSION['time'] > 10) { 
-		// 	    echo "<script>alert('Boli ste odhlásený z dôvodu neaktivity dlhšej ako 10 minút');</script>";
-		// 	    session_destroy();
-		// 	    header("location: ?page=login");
-		// 	} else {
-		// 	    $_SESSION['time'] = time();
-		// 	}
-		// }
+		//logout after 10 min
+		if (isset($_SESSION['time'])) {
+			if(time() - $_SESSION['time'] > 600) { 
+			    echo "<script>alert('Boli ste odhlásený z dôvodu neaktivity dlhšej ako 10 minút');</script>";
+			    session_destroy();
+			    header("location: ?page=login");
+			} else {
+			    $_SESSION['time'] = time();
+			}
+		}
 	}
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Informačný systém pre predajňu so syrmi - SYRIIS</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+	<title>Informačný systém pre predajňu so syrmi - SYRIIS</title>
+	<link rel="stylesheet" href="style.css" type="text/css" />
 	<?php
 	if(isset($_GET['page'])){$_GET['page']=$_GET['page'];}
 	else {$_GET['page'] = "";}
@@ -46,7 +47,7 @@
 	<section>
 		<div id="center">
 			<article>
-				<?php  
+				<?php
 					if(!empty($_GET['page'])) {  
 						if (!file_exists($_GET['page'].".php"))  
 							include("home.php");
