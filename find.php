@@ -1,8 +1,8 @@
 <script src="sorttable.js"></script>
 <?php
-	include('config.php');
+	include('session.php');
 	$sql = "SELECT syry.nazov AS nazov_syra, syry.typ AS typ_syra, zivocich, tuk, krajiny.nazov AS krajina, info, dodavatelia.nazov AS dod_nazov, umiestnenie, objednavky.id_obj
-			FROM bochniky INNER JOIN objednavky ON bochniky.id_obj=objednavky.id_obj 
+			FROM bochniky INNER JOIN objednavky ON bochniky.id_obj=objednavky.id_obj
 						  INNER JOIN syry ON syry.id_syr=bochniky.id_syr
 						  INNER JOIN dodavatelia ON dodavatelia.id_dod=objednavky.id_dod
 						  INNER JOIN zamestnanci ON zamestnanci.r_cislo=objednavky.r_cislo
@@ -13,51 +13,72 @@
 ?>
 <h1>Vyhľadávacie kritéria</h1>
 <form action="" method="post">
-	<select name="name">
-		<option value="0"></option>
-		<?php
-		$query = "SELECT DISTINCT nazov FROM syry";
-		$res = mysqli_query($db, $query);
-		$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
-		foreach ($rows as $cheese) { ?>
-			<option value="<?php echo $cheese['nazov'] ?>" <?php if (isset($_POST['name']) && $_POST['name'] == $cheese['nazov']) echo "selected='true'" ?>><?php echo "${cheese['nazov']}" ?></option>
-		<?php } 
-		?>
-	</select>
-	<select name="type">
-		<option value="0"></option>
-		<?php
-		$query = "SELECT DISTINCT typ FROM syry";
-		$res = mysqli_query($db, $query);
-		$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
-		foreach ($rows as $cheese) { ?>
-			<option value="<?php echo $cheese['typ'] ?>" <?php if (isset($_POST['type']) && $_POST['type'] == $cheese['typ']) echo "selected='true'" ?>><?php echo "${cheese['typ']}" ?></option>
-		<?php } 
-		?>
-	</select>
-	<select name="animal">
-		<option value="0"></option>
-		<?php
-		$query = "SELECT DISTINCT zivocich FROM syry";
-		$res = mysqli_query($db, $query);
-		$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
-		foreach ($rows as $cheese) { ?>
-			<option value="<?php echo $cheese['zivocich'] ?>" <?php if (isset($_POST['animal']) && $_POST['animal'] == $cheese['zivocich']) echo "selected='true'" ?>><?php echo "${cheese['zivocich']}" ?></option>
-		<?php } 
-		?>
-	</select>
-	<select name="country">
-		<option value="0"></option>
-		<?php
-		$query = "SELECT * FROM krajiny";
-		$res = mysqli_query($db, $query);
-		$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
-		foreach ($rows as $country) { ?>
-			<option value="<?php echo $country['skratka'] ?>" <?php if (isset($_POST['country']) && $_POST['country'] == $country['skratka']) echo "selected='true'" ?>><?php echo "${country['nazov']}" ?></option>
-		<?php } 
-		?>
-	</select>
-	<input type="number" name="fat" min="1" max="100" value="<?php if (isset($_POST['fat'])) echo $_POST['fat'] ?>"> % tuku
+	<table>
+		<tr>
+			<td>Názov syra:</td>
+			<td>Typ syra:</td>
+			<td>Živočích:</td>
+			<td>Krajina:</td>
+			<td>Podiel Tuku:</td>
+		</tr>
+		<tr>
+			<td>
+				<select name="name">
+					<option value="0"></option>
+					<?php
+					$query = "SELECT DISTINCT nazov FROM syry";
+					$res = mysqli_query($db, $query);
+					$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
+					foreach ($rows as $cheese) { ?>
+						<option value="<?php echo $cheese['nazov'] ?>" <?php if (isset($_POST['name']) && $_POST['name'] == $cheese['nazov']) echo "selected='true'" ?>><?php echo "${cheese['nazov']}" ?></option>
+					<?php }
+					?>
+				</select>
+			</td>
+			<td>
+				<select name="type">
+					<option value="0"></option>
+					<?php
+					$query = "SELECT DISTINCT typ FROM syry";
+					$res = mysqli_query($db, $query);
+					$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
+					foreach ($rows as $cheese) { ?>
+						<option value="<?php echo $cheese['typ'] ?>" <?php if (isset($_POST['type']) && $_POST['type'] == $cheese['typ']) echo "selected='true'" ?>><?php echo "${cheese['typ']}" ?></option>
+					<?php }
+					?>
+				</select>
+			</td>
+			<td>
+				<select name="animal">
+					<option value="0"></option>
+					<?php
+					$query = "SELECT DISTINCT zivocich FROM syry";
+					$res = mysqli_query($db, $query);
+					$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
+					foreach ($rows as $cheese) { ?>
+						<option value="<?php echo $cheese['zivocich'] ?>" <?php if (isset($_POST['animal']) && $_POST['animal'] == $cheese['zivocich']) echo "selected='true'" ?>><?php echo "${cheese['zivocich']}" ?></option>
+					<?php }
+					?>
+				</select>
+			</td>
+			<td>
+				<select name="country">
+					<option value="0"></option>
+					<?php
+					$query = "SELECT * FROM krajiny";
+					$res = mysqli_query($db, $query);
+					$rows = mysqli_fetch_all($res, MYSQLI_ASSOC);
+					foreach ($rows as $country) { ?>
+						<option value="<?php echo $country['skratka'] ?>" <?php if (isset($_POST['country']) && $_POST['country'] == $country['skratka']) echo "selected='true'" ?>><?php echo "${country['nazov']}" ?></option>
+					<?php }
+					?>
+				</select>
+			</td>
+			<td>
+				<input type="number" name="fat" min="1" max="100" value="<?php if (isset($_POST['fat'])) echo $_POST['fat'] ?>"> %
+			</td>
+		</tr>
+	</table>
 	<br>
 	<input type="submit" name="find_submit" value="Hľadať">
 </form>
@@ -109,13 +130,13 @@
 					<th>Názov syra</th>
 					<th>Druh syra</th>
 					<th>Živočích</th>
-					<th>% tuku</th>
+					<th>Podiel tuku</th>
 					<th>Krajina pôvodu</th>
 					<th>Číslo objednávky</th>
 					<th>Dodávateľ</th>
 					<th>Umiestnenie</th>
 				</tr>
-				<?php 
+				<?php
 					foreach ($rows as $row) { ?>
 						<tr>
 							<td><?php echo $row['nazov_syra'] ?></td>

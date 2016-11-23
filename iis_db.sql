@@ -38,6 +38,18 @@ CREATE TABLE `bochniky` (
   `id_obj` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- CREATE TRIGGER cisla_check BEFORE INSERT OR UPDATE ON bochniky
+--     ->  FOR EACH ROW
+--     ->  BEGIN
+--     ->      IF NEW.tuk < 0 THEN
+--     ->          SET NEW.tuk = 0;
+--     ->      ELSEIF NEW.tuk > 100 THEN
+--     ->          SET NEW.tuk = 100;
+--     ->      END IF;
+--     ->      IF NEW.akt_hmot > NEW.poc_hmot THEN
+--     ->          SET NEW.akt_hmot = NEW.poc_hmot;
+--     -> END;//
+
 --
 -- Sťahujem dáta pre tabuľku `bochniky`
 --
@@ -95,6 +107,18 @@ CREATE TABLE `dodavatelia` (
   `dic` char(10) DEFAULT NULL,
   `ic_dph` char(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- CREATE TRIGGER cisla_check BEFORE INSERT OR UPDATE ON bochniky
+--     ->  FOR EACH ROW
+--     ->  BEGIN
+--     ->      IF NEW.tuk < 0 THEN
+--     ->          SET NEW.tuk = 0;
+--     ->      ELSEIF NEW.tuk > 100 THEN
+--     ->          SET NEW.tuk = 100;
+--     ->      END IF;
+--     ->      IF NEW.akt_hmot > NEW.poc_hmot THEN
+--     ->          SET NEW.akt_hmot = NEW.poc_hmot;
+--     -> END;//
 
 --
 -- Sťahujem dáta pre tabuľku `dodavatelia`
@@ -261,7 +285,7 @@ CREATE TABLE `zamestnanci` (
 --
 
 INSERT INTO `zamestnanci` (`r_cislo`, `login`, `pass`, `meno`, `priezvisko`, `ulica`, `cislo`, `mesto`, `psc`, `plat`, `veduci`) VALUES
-('123456/1234', 'tiboris', 'a', 'Tibor', 'Dudlak', 'Kolejni', 9, 'Brno', '99999', 165123, b'1'),
+('950217/9742', 'tiboris', 'g', 'Tibor', 'Dudlák', 'Kolejni', 9, 'Brno', '99999', 165123, b'1'),
 ('530919/907', 'admin', 'nimda', 'Peter', 'Sveter', 'Rododendron', 2, 'Brno', '61200', 599, b'1'),
 ('950217/9720', 'peto', 'aaa', 'Peter', 'Klobása', 'Sta?kova', 2, 'Brno', '60200', 8, b'0'),
 ('950217/9775', 'miro', 'aaa', 'Miroslav', 'Sud', 'Hujíčkova', 87, 'Brno', '61200', 12, b'0');

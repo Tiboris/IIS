@@ -1,5 +1,5 @@
 <h1>Pridať zamestanca</h1>
-<?php 
+<?php
 	include('session.php');
 	if ($_SESSION['veduci'] != '1') {
 		header("location: ?page=manage");
@@ -22,11 +22,11 @@
 	<table>
 		<tr>
 			<td>Meno: </td>
-			<td><input type="text" name="meno" maxlength="20" placeholder="John" required="yes" pattern="[a-zA-Z]+"> *</td>
+			<td><input type="text" name="meno" maxlength="20" placeholder="John" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"> *</td>
 		</tr>
 		<tr>
 			<td>Priezvisko: </td>
-			<td><input type="text" name="priezvisko" maxlength="20" placeholder="Doe" required="yes" pattern="[a-zA-Z]+"> *</td>
+			<td><input type="text" name="priezvisko" maxlength="20" placeholder="Doe" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"> *</td>
 		</tr>
 		<tr>
 			<td>Rodné číslo: </td>
@@ -42,13 +42,13 @@
 		</tr>
 		<tr>
 			<td>Ulica: </td>
-			<td><input type="text" name="ulica" maxlength="30" placeholder="Kolejní" pattern="[a-zA-Z]+"></td>
+			<td><input type="text" name="ulica" maxlength="30" placeholder="Kolejní" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"></td>
 			<td>Číslo: </td>
 			<td><input type="number" name="cislo" max="100" placeholder="2"></td>
 		</tr>
 		<tr>
 			<td>Mesto: </td>
-			<td><input type="text" name="mesto" maxlength="30" placeholder="Brno" pattern="[a-zA-Z]+"></td>
+			<td><input type="text" name="mesto" maxlength="30" placeholder="Brno" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"></td>
 			<td>PSČ: </td>
 			<td><input type="text" name="psc" minlength="5" maxlength="5" placeholder="61200" pattern="[0-9]+"></td>
 		</tr>

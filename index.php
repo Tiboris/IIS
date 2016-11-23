@@ -3,7 +3,7 @@
 		session_start();
 		//logout after 10 min
 		if (isset($_SESSION['time'])) {
-			if(time() - $_SESSION['time'] > 600) { 
+			if(time() - $_SESSION['time'] > 600) {
 			    echo "<script>alert('Boli ste odhlásený z dôvodu neaktivity dlhšej ako 10 minút');</script>";
 			    session_destroy();
 			    header("location: ?page=login");
@@ -30,7 +30,7 @@
 			<div id="logo"><h1>SYRIIS</h1></div>
 			<ul>
 				<li <?php if($_GET['page']=="home"){ echo "class='active'";} ?> ><a href="?page=home"> Home</a></li>
-				<li <?php if($_GET['page']=="add"){ echo "class='active'";} ?> ><a href="?page=add">Pridať syr</a></li>
+				<li <?php if($_GET['page']=="add_cheese"){ echo "class='active'";} ?> ><a href="?page=add_cheese">Pridať syr</a></li>
 				<li <?php if($_GET['page']=="order"){ echo "class='active'";} ?> ><a href="?page=order"> Objednať</a></li>
 				<li <?php if($_GET['page']=="find"){ echo "class='active'";} ?> ><a href="?page=find"> Hľadať</a></li>
 				<li <?php if($_GET['page']=="loaves" or $_GET['page']=="loaf"){ echo "class='active'";} ?> ><a href="?page=loaves"> Bochníky</a></li>
@@ -40,7 +40,6 @@
 				<?php } else { ?>
 					<li <?php if($_GET['page']=="login"){ echo "class='active'";} ?> ><a href="?page=login"> Login</a></li>
 				<?php } ?>
-				
 			</ul>
 		</nav>
 	</header>
@@ -48,15 +47,15 @@
 		<div id="center">
 			<article>
 				<?php
-					if(!empty($_GET['page'])) {  
-						if (!file_exists($_GET['page'].".php"))  
+					if(!empty($_GET['page'])) {
+						if (!file_exists($_GET['page'].".php"))
 							include("home.php");
 						else
 							include($_GET['page'] .".php");
-					}  
-					else  
-						include("login.php"); 
-				?> 
+					}
+					else
+						include("login.php");
+				?>
 			</article>
 			<div class="clear"></div>
 		</div>

@@ -16,7 +16,7 @@
 					<?php
 					foreach ($rows as $cheese) { ?>
 						<option value="<?php echo $cheese['id_syr'] ?>"><?php echo "${cheese['nazov']}" ?></option>
-					<?php } 
+					<?php }
 					?>
 				</select>
 			 </td>
