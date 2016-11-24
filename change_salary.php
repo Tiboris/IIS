@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include('session.php');
 	if ($_SESSION['veduci'] != '1') {
 		header("location: ?page=manage");
@@ -25,7 +25,7 @@
 					<?php
 					foreach ($rows as $employee) { ?>
 						<option value="<?php echo $employee['r_cislo'] ?>"><?php echo "${employee['meno']} ${employee['priezvisko']}, ${employee['r_cislo']}, plat = ${employee['plat']}&euro; " ?></option>
-					<?php } 
+					<?php }
 					?>
 				</select>
 			</td>

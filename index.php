@@ -1,4 +1,15 @@
 <?php
+	ini_set("default_charset", "UTF-8");
+	// echo 'Current PHP version: ' . phpversion();
+	function mysqli_fetch_all($result, $arg)
+	{// PHP installation was not compiled with mysqlnd
+		$rows = array();
+		while ($row = $result->fetch_assoc()) {
+	    	$rows[] = $row;
+		}
+		return $rows;
+	}
+
 	if (!isset($_SESSION)) {
 		session_start();
 		//logout after 10 min

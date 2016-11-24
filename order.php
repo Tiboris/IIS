@@ -14,7 +14,7 @@
 					<?php
 					foreach ($rows as $supplier) { ?>
 						<option value="<?php echo $supplier['id_dod'] ?>"><?php echo "${supplier['nazov']}, ${supplier['mesto']}" ?></option>
-					<?php } 
+					<?php }
 					?>
 				</select>
 			</td>

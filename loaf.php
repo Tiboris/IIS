@@ -4,7 +4,7 @@
 		header("location: ?page=loaves");
 	include('config.php');
 	$sql = "SELECT syry.nazov AS nazov_syra, syry.typ AS typ_syra, zivocich, tuk, akt_hmot, poc_hmot, krajiny.nazov AS krajina, objednavky.id_obj, dodavatelia.nazov AS dod_nazov, zamestnanci.meno, zamestnanci.priezvisko, trvanlivost, datum
-			FROM bochniky INNER JOIN objednavky ON bochniky.id_obj=objednavky.id_obj 
+			FROM bochniky INNER JOIN objednavky ON bochniky.id_obj=objednavky.id_obj
 						  INNER JOIN syry ON syry.id_syr=bochniky.id_syr
 						  INNER JOIN dodavatelia ON dodavatelia.id_dod=objednavky.id_dod
 						  INNER JOIN zamestnanci ON zamestnanci.r_cislo=objednavky.r_cislo
@@ -30,7 +30,7 @@
 		<th>Dodávateľ</th>
 		<th>Objednal</th>
 	</tr>
-	<?php 
+	<?php
 		foreach ($rows as $row) { ?>
 			<tr>
 				<td><?php echo $row['nazov_syra'] ?></td>

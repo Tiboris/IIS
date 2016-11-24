@@ -30,7 +30,7 @@ CREATE TABLE `bochniky` (
   `id_bochnika` int(11) NOT NULL,
   `poc_hmot` decimal(5,2) NOT NULL,
   `akt_hmot` decimal(5,2) NOT NULL,
-  `tuk` decimal(38,0) NOT NULL,
+  `tuk` decimal(3,0) NOT NULL,
   `trvanlivost` date NOT NULL,
   `umiestnenie` varchar(8) NOT NULL,
   `id_syr` int(11) NOT NULL,
@@ -38,18 +38,23 @@ CREATE TABLE `bochniky` (
   `id_obj` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- CREATE TRIGGER cisla_check BEFORE INSERT OR UPDATE ON bochniky
---     ->  FOR EACH ROW
---     ->  BEGIN
---     ->      IF NEW.tuk < 0 THEN
---     ->          SET NEW.tuk = 0;
---     ->      ELSEIF NEW.tuk > 100 THEN
---     ->          SET NEW.tuk = 100;
---     ->      END IF;
---     ->      IF NEW.akt_hmot > NEW.poc_hmot THEN
---     ->          SET NEW.akt_hmot = NEW.poc_hmot;
---     -> END;//
+delimiter //
 
+CREATE TRIGGER cisla_check
+BEFORE INSERT ON bochniky
+FOR EACH ROW
+BEGIN
+    IF NEW.tuk < 0 THEN
+        SET NEW.tuk = 0;
+    ELSEIF NEW.tuk > 100 THEN
+        SET NEW.tuk = 100;
+    END IF;
+    IF NEW.akt_hmot > NEW.poc_hmot THEN
+        SET NEW.akt_hmot = NEW.poc_hmot;
+    END IF;
+END;
+//
+delimiter ;
 --
 -- Sťahujem dáta pre tabuľku `bochniky`
 --
@@ -105,21 +110,20 @@ CREATE TABLE `dodavatelia` (
   `priezvisko` varchar(20) DEFAULT NULL,
   `ico` varchar(8) DEFAULT NULL,
   `dic` char(10) DEFAULT NULL,
-  `ic_dph` char(12) DEFAULT NULL
+  `ic_dph` char(12) DEFAULT NULL,
+  UNIQUE (nazov)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- CREATE TRIGGER cisla_check BEFORE INSERT OR UPDATE ON bochniky
---     ->  FOR EACH ROW
---     ->  BEGIN
---     ->      IF NEW.tuk < 0 THEN
---     ->          SET NEW.tuk = 0;
---     ->      ELSEIF NEW.tuk > 100 THEN
---     ->          SET NEW.tuk = 100;
---     ->      END IF;
---     ->      IF NEW.akt_hmot > NEW.poc_hmot THEN
---     ->          SET NEW.akt_hmot = NEW.poc_hmot;
---     -> END;//
+delimiter //
 
+CREATE TRIGGER zmaz_ponuky
+AFTER DELETE ON dodavatelia
+FOR EACH ROW
+BEGIN
+    DELETE FROM ponukaju WHERE ponukaju.id_dod = old.id_dod;
+END;
+//
+delimiter ;
 --
 -- Sťahujem dáta pre tabuľku `dodavatelia`
 --
@@ -134,7 +138,7 @@ INSERT INTO `dodavatelia` (`id_dod`, `nazov`, `ulica`, `cislo`, `mesto`, `psc`, 
 (7, 'Varsyrs', 'Fish', 8, 'Rome', '54978', 'PO', NULL, NULL, NULL, '90181681', '987456823', 'IT914987654'),
 (8, 'Cheesex', 'Page', 79, 'London', '98799', 'PO', NULL, NULL, NULL, '99182981', '987456823', 'GB914987654'),
 (9, 'Cheese', 'Baguette', 27, 'Paris', '98999', 'PO', NULL, NULL, NULL, '99183681', '987456823', 'FR914987654'),
-(10, 'Kotuč s.r.o.', 'Dolna', 90, 'Raž?any', '51469', 'PO', NULL, NULL, NULL, '09184681', '987456123', 'SK014987654');
+(10, 'Kotuč s.r.o.', 'Dolna', 90, 'Ražňany', '51469', 'PO', NULL, NULL, NULL, '09184681', '987456123', 'SK014987654');
 
 -- --------------------------------------------------------
 
@@ -145,7 +149,8 @@ INSERT INTO `dodavatelia` (`id_dod`, `nazov`, `ulica`, `cislo`, `mesto`, `psc`, 
 CREATE TABLE `krajiny` (
   `skratka` char(2) NOT NULL,
   `nazov` varchar(20) NOT NULL,
-  `info` varchar(255) NOT NULL
+  `info` varchar(255) NOT NULL,
+  UNIQUE(nazov)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -240,7 +245,8 @@ CREATE TABLE `syry` (
   `id_syr` int(11) NOT NULL,
   `nazov` varchar(30) NOT NULL,
   `typ` varchar(20) NOT NULL,
-  `zivocich` varchar(20) NOT NULL
+  `zivocich` varchar(20) NOT NULL,
+  UNIQUE (nazov)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -280,6 +286,39 @@ CREATE TABLE `zamestnanci` (
   `veduci` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+delimiter //
+
+CREATE TRIGGER triggerRC
+BEFORE INSERT ON zamestnanci
+FOR EACH ROW
+BEGIN
+    DECLARE RC varchar(11);
+    DECLARE TMP int;
+    DECLARE MESIAC int;
+    DECLARE DAT date;
+    SET RC = NEW.r_cislo;
+    SET MESIAC = CAST(SUBSTR(RC, 3, 2)AS UNSIGNED);
+    SET TMP = CAST(SUBSTR(RC, 1, 6) AS UNSIGNED);
+    IF (MESIAC > 12) THEN
+        SET TMP = TMP - 5000;
+    END IF;
+    SET DAT = STR_TO_DATE( TMP , 'YYMMDD');
+END;
+//
+delimiter ;
+
+delimiter //
+
+CREATE TRIGGER triggerOBJ
+BEFORE INSERT ON objednavky
+FOR EACH ROW
+BEGIN
+    IF NEW.r_cislo NOT IN (SELECT r_cislo FROM zamestnanci WHERE NEW.r_cislo = zamestnanci.r_cislo) THEN
+        CALL `Zamestnanec s takymto rodnym cislom neexistuje!`;
+    END IF;
+END;
+//
+delimiter ;
 --
 -- Sťahujem dáta pre tabuľku `zamestnanci`
 --

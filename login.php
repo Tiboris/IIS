@@ -5,17 +5,17 @@
 	}
 	$error = "";
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
-		// username and password sent from form 
+		// username and password sent from form
 
 		$myusername = mysqli_real_escape_string($db, $_POST['username']);
-		$mypassword = mysqli_real_escape_string($db, $_POST['password']); 
+		$mypassword = mysqli_real_escape_string($db, $_POST['password']);
 
 		$sql = "SELECT login, meno, priezvisko, veduci FROM zamestnanci WHERE login='$myusername' and pass='$mypassword'";
 		$result = mysqli_query($db, $sql);
 		$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 		$count = mysqli_num_rows($result);
-		
+
 		if($count == 1) {
 			$_SESSION['login_user'] = $myusername;
 			$_SESSION['meno'] = $row['meno'];
@@ -35,7 +35,7 @@
 			<table>
 				<tr>
 					<td><label>Prihlasovacie meno:</label></td>
-					<td><input type="text" name="username" placeholder="admin" /></td>            
+					<td><input type="text" name="username" placeholder="admin" /></td>
 				</tr>
 				<tr>
 					<td><label>Heslo:</label></td>
@@ -45,7 +45,7 @@
 			<br>
 			<input type="submit" value=" Potvrdiť "/>
 			<br>
-		</form> 
+		</form>
 		<div id="error"><?php echo $error; ?></div>
 	</div>
 </div>

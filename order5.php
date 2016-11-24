@@ -15,7 +15,7 @@
 	$last_id = mysqli_insert_id($db);
 
 	// bochniky
-	for ($i=0; $i < sizeof($_SESSION['id_syrov']); $i++) { 
+	for ($i=0; $i < sizeof($_SESSION['id_syrov']); $i++) {
 		$id_syr = $_SESSION['id_syrov'][$i];
 		$hmot = $_SESSION['hmot_syrov'][$i];
 		$krajina = $_SESSION['krajiny_syrov'][$i];
@@ -56,8 +56,8 @@
 		<th>Trvanlivosť</th>
 		<th>Umiestnenie</th>
 	</tr>
-	<?php 
-		for ($i=0; $i < sizeof($_SESSION['id_syrov']); $i++) { 
+	<?php
+		for ($i=0; $i < sizeof($_SESSION['id_syrov']); $i++) {
 			$id_syr = $_SESSION['id_syrov'][$i];
 			$sql = "SELECT * FROM bochniky NATURAL JOIN syry WHERE syry.id_syr=$id_syr AND bochniky.id_obj=$last_id";
 			$result = mysqli_query($db, $sql);
