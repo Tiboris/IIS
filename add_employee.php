@@ -54,11 +54,11 @@
 		</tr>
 		<tr>
 			<td>Plat: </td>
-			<td><input type="number" name="plat" min="0" max="10000000" placeholder="500"></td>
+			<td><input type="number" name="plat" min="0" max="10000000" placeholder="500" required="yes"> *</td>
 		</tr>
 		<tr>
 			<td>Vedúci: </td>
-			<td><input type="checkbox" name="veduci" value="1" required="yes"> *</td>
+			<td><input type="checkbox" name="veduci" value="1"></td>
 		</tr>
 	</table>
 	<br>

@@ -272,17 +272,17 @@ INSERT INTO `syry` (`id_syr`, `nazov`, `typ`, `zivocich`) VALUES
 -- Štruktúra tabuľky pre tabuľku `zamestnanci`
 --
 
-CREATE TABLE `zamestnanci` (
+CREATE TABLE IF NOT EXISTS `zamestnanci` (
   `r_cislo` varchar(11) NOT NULL,
   `login` varchar(32) NOT NULL,
   `pass` varchar(32) NOT NULL,
   `meno` varchar(20) NOT NULL,
   `priezvisko` varchar(20) NOT NULL,
-  `ulica` varchar(30) DEFAULT NULL,
-  `cislo` int(11) DEFAULT NULL,
-  `mesto` varchar(30) DEFAULT NULL,
-  `psc` char(5) DEFAULT NULL,
-  `plat` int(11) NOT NULL,
+  `ulica` varchar(30) DEFAULT 'Kolejní',
+  `cislo` int(11) DEFAULT '2',
+  `mesto` varchar(30) DEFAULT 'Brno',
+  `psc` char(5) DEFAULT '61200',
+  `plat` int(11) NOT NULL DEFAULT '333',
   `veduci` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
