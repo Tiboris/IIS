@@ -53,22 +53,6 @@ h1 {
 	color: #e74c3c;
 	font-family: Helvetica;
 }
-h3 {
-	color: #e74c3c;
-	font-family: Helvetica;
-}
-h4 {
-	color: #2980b9;
-	font-family: Helvetica;
-}
-hr {
-	display: block;
-	height: 1px;
-	border: 0;
-	border-top: 2px solid #3498db;
-	margin: 1em 0;
-	padding: 0;
-}
 .clear {
 	clear: both;
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <?php
 	ini_set("default_charset", "UTF-8");
 	// echo 'Current PHP version: ' . phpversion();
@@ -24,7 +25,6 @@
 		}
 	}
 ?>
-<!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="utf-8">

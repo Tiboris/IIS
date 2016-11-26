@@ -15,7 +15,7 @@
 				<tr>
 					<td><b><?php echo "${cheese['nazov']}" ?> </b></td>
 					<td> hmotnosť: </td>
-					<td><input type="number" name="hmot[]" min="1.0" max="100.0" required="yes" title="hmotnosť"> kg *</td>
+					<td><input type="number" name="hmot[]" min="1.0" max="100.0" required="yes" title="hmotnosť" step=0.01> kg *</td>
 					<td> tuk: </td>
 					<td><input type="number" name="tuk[]" min="1" max="100" required="yes" title="percento tuku"> % *</td>
 					<td> trvanlivosť: </td>

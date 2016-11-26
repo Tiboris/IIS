@@ -2,7 +2,6 @@
 <?php
 	include('session.php');
 	$_SESSION['datum'] = $_POST['datum'];
-	$_SESSION['suma'] = $_POST['suma'];
 	$_SESSION['umiestnenie'] = $_POST['umiestnenie'];
 	unset($_POST);
 
