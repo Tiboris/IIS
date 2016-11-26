@@ -15,7 +15,8 @@
 		if ($row['login'] == $_SESSION['login_user']) {
 			echo "<script>alert('Nemôžete vyhodiť sám seba!')</script>";
 		} else {
-			$sql = "UPDATE zamestnanci WHERE r_cislo='${_POST['employees']}' SET login='' AND heslo='' AND plat=0 AND veduci=0";
+			$sql = "UPDATE zamestnanci SET login=NULL WHERE r_cislo='${_POST['employees']}'";
+			var_dump($sql);
 			$result = mysqli_query($db, $sql);
 			if ($result) {
 				echo "<script>alert('Zamestnanec s rodným číslom ${_POST['employees']} bol prepustený!')</script>";
