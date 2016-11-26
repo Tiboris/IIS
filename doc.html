@@ -12,47 +12,87 @@
 </head>
 <body>
 
-<!-- Zkontrolujte prosím nastavení kódování v hlavièce dokumentu
-     podle pou¾itého editoru -->
-
-<h1>Název zadání (editujte)</h1> <!-- Nahradte názvem svého zadání -->
-
+<h1>Predajòa so syrmi</h1>
+<h2>Zadanie</h2>
+<dd>
+Navrhnite IS predajni so syrmi, ktorý by mal umo¾ni» evidovanie produktov v predajni a v jej
+sklade. Ïalej by mal umo¾ni» zamestnancovi objednáva» syry na predajòu a na sklad od rôznych
+dodávateµov. Jedna objednávka mô¾e obsahova» aj viac druhov syrov. Syry sa kategorizujú podµa
+viac kritérií: zeme pôvodu, ¾ivoèícha (kravský, ovèí, kozí, ...), typu (ementálový,
+plesòový, údený, ...). U syrov je nutné evidova» percento tuku. Syry sú do predajne dodávané
+v bochníkoch, kde pre ka¾dý bochník je potreba evidova» jeho poèiatoènú hmotnos», aktuálnu
+hmotnos» na predajni, dátum dodania, trvanlivost. Zamestnanci si mô¾u vyhµadáva» syry aj
+podµa zeme pôvodu, pri ktorej sú k dispozici relevantné informácie o syroch z danej zemi, èi
+podµa jeho druhu alebo ¾ivoèícha. Zamestnanci predajne mô¾u objednáva» rôzne druhy syrov
+od rôznych dodávateµov (nie v¹etci dodávatelia dodávajú v¹etky druhy syra), prièom
+objednávka mô¾e obsahova» viac druhov syra a u ka¾dého druhu je nutné ¹pecifikova»
+mno¾stvo (hmotnos»). Pre dodané syry je nutné ma» mo¾nos» dohµada», ku ktorej objednávke
+patia a od kterého dodaváteµa sú.
+</dd>
 <dl>
-	<dt>Autoøi</dt>
-	<dd>První jméno <!-- Nahraïte skuteèným jménem a e-mailem autora a popisem èinnosti -->
-	    <a href="mailto:xautor01@stud.fit.vutbr.cz">xautor01@stud.fit.vutbr.cz</a> -
-		správa u¾ivatelù a u¾ivatelské rozhraní
+	<dt>Autori:</dt>
+	<dd>Patrik Segedy
+	    <a href="mailto:xseged00@stud.fit.vutbr.cz">xseged00@stud.fit.vutbr.cz</a> -
+		správa pou¾ávateµov, pou¾ívateµské rozhranie a databázový subsystém
 	</dd>
-	<dd>Druhé jméno <!-- Nahraïte skuteèným jménem a e-mailem autora a popisem èinnosti -->
-	    <a href="mailto:xautor02@stud.fit.vutbr.cz">xautor02@stud.fit.vutbr.cz</a> -
-		databázový subsystém
+	<dd>Tibor Dudlák
+	    <a href="mailto:xdudla00@stud.fit.vutbr.cz">xdudla00@stud.fit.vutbr.cz</a> -
+		pou¾ívateµské rozhranie a databázový subsystém
 	</dd>
-	<dt>URL aplikace</dt>
-	<dd><a href="http://www.stud.fit.vutbr.cz/~xautor01/IIS">http://www.stud.fit.vutbr.cz/~xautor01/IIS</a></dd>
-	<dd>(pokud má aplikace více vstupních stránek, napi¹te obdobnì dal¹í URL)</dd>
+	<dt>URL informaèného systému</dt>
+	<dd><a href="http://www.stud.fit.vutbr.cz/~xdudla00/IIS">http://www.stud.fit.vutbr.cz/~xdudla00/IIS</a></dd>
 </dl>
 
-<h2>U¾ivatelé systému pro testování</h2>
-<p>Uveïte prosím existující zástupce <strong>v¹ech rolí u¾ivatelù</strong>.</p>
+<h2>Pou¾ívatelia systému pre testovanie</h2>
+<p>Zástupcovia <strong>v¹etkých rolí</strong> u¾ivateµov:</p>
 <table>
-<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
-<tr><td>admin</td><td>admin</td><td>Administrátor</td></tr>
-<tr><td>prodavac</td><td>prodavac</td><td>Prodavaè</td></tr>
-<tr><td>franta</td><td>franta</td><td>Zákazník</td></tr>
+    <tr><th>Login</th><th>Heslo</th><th>Rola</th></tr>
+    <tr><td>admin</td><td>nimda</td><td>Administrátor</td></tr>
+    <tr><td>tiboris</td><td>g</td><td>Administrátor</td></tr>
+    <tr><td>miro</td><td>aaa</td><td>Zamestnanec</td></tr>
+    <tr><td>peto</td><td>aaa</td><td>Zamestnanec</td></tr>
 </table>
 
-<h2>Implementace</h2>
-<p>Struèná dokumentace k implementaci, která popisuje, které PHP skripty implementují jednotlivé pøípady pou¾ití uvedené v use-case diagramu z IDS. V pøípadì, ¾e bylo nutno pøi implementaci uèinit zmìny v návrhu, musí být v dokumentaci zdùvodnìny.</p>
+<h2>Implementácia</h2>
+<p>
+    
+    <b>Zoznam súborov s popisom k use case diagramu:</b><br>
+    <li><i>add_cheese.php</i><br><dd>implementácia prípadu u¾itia pridávania syru do systému, syr ktorý do systému pridávame pridáme priamo do ponuky niektorému z na¹ich dodávateµov.</dd><br><br></li>
+    <li><i>add_employee.php</i><br><dd>implementuje pridávanie zamestnanca do systému ktoré mô¾e vykona» iba pracovník, ktorý je v systéme vedený ako vedúci.</dd><br><br></li>
+    <li><i>change_salary.php</i><br><dd>vïaka tomuto skriptu mô¾e pracovník, ktorý je v systéme vedený ako vedúci meni» plat ostatným zamestnancom.</dd><br><br></li>
+    <li><i>config.php</i><br><dd>obsahuje informácie potrené k pripojeniu sa k databáze a samotné pripojenie k nej.</dd><br><br></li>
+    <li><i>doc.html</i><br><dd>tento dokument</dd><br><br></li>
+    <li><i>find.php</i><br><dd>obsahuje stránku ktorá slú¾i na vyhµadávanie informácií o bochníkoch podµa kritérií ¹pecifikovaných v zadaní.</dd><br><br></li>
+    <li><i>fire_employee.php</i><br><dd>implementácia use case-u kde má vedúci mo¾nos» prepusti» zamestnanca.</dd><br><br></li>
+    <li><i>home.php</i><br><dd>úvodná stránka</dd><br><br></li>
+    <li><i>iis_db.sql</i><br><dd>sql skrip pre vytvorenie MySQL databázy potrebnej k správnemu fungovaniu webu informaèného systému.</dd><br><br></li>
+    <li><i>images/cheese-flat.png</i><br><dd>logo zobrazujúce sa v µavom hornom rohu informaèného systému.</dd><br><br></li>
+    <li><i>index.php</i><br><dd>táto stránka sa zobrazuje stále a jej obsah v tagu article je dynamicky naèítavaný a následne include-nutý z php súboru podµa po¾iadavkov pou¾ívateµa.</dd><br><br></li>
+    <li><i>loaf.php</i><br><dd>implementuje zobrazovanie informácií o bochníkoch èi to na sklade alebo na predajni podµa výberu pou¾ívateµa v <i>loaves.php</i></dd><br><br></li>
+    <li><i>loaves.php</i><br><dd>umo¾òuje pou¾ívateµovi vybra» zobrazovanie informácií o bochníkoch na predajni alebo sklade.</dd><br><br></li>
+    <li><i>login.php</i><br><dd>umo¾òuje prihlásenie sa do systému pomocou pou¾ívateµského mena a hesla.</dd><br><br></li>
+    <li><i>logout.php</i><br><dd>po kliknutí na logout v informaènom systéme v pravom hornom rohu sa pou¾ívateµ odhlási.</dd><br><br></li>
+    <li><i>manage.php</i><br><dd>implementuje výber use case-u pou¾ívateµa s právami vedúceho pre správu zamestnancov.</dd><br><br></li>
+    <li><i>order.php</i><br><dd>umo¾òuje výber dodávateµa od ktorého budeme objednáva» syr/y.</dd><br><br></li>
+    <li><i>order2.php</i><br><dd>umo¾òuje výber z ponúkaných syra/ov od dodávateµa.</dd><br><br></li>
+    <li><i>order3.php</i><br><dd>mo¾nos» upresnenia objednávky na minimálnu hmotnos» percento tuku a trvanlivos» a krajinu z ktorej je dodávaný syr.</dd><br><br></li>
+    <li><i>order4.php</i><br><dd>zrekapitulovanie objednávky s výpisom cien jednotlivýcg syrov z objednávky a celkovej sumy, mo¾nos» vybra» èi bude dodaný na predajòu alebo rovno do skladu.</dd><br><br></li>
+    <li><i>order5.php</i><br><dd>výpis potvrdenej objednávky.</dd><br><br></li>
+    <li><i>session.php</i><br><dd>skript ktorý udr¾iava informácie o prihlásenom pou¾ívateµovi</dd><br><br></li>
+    <li><i>sorttable.js</i><br><dd>kód stiahnutý z <a href="http://www.kryogenix.org/code/browser/sorttable/">www.kryogenix.org</a> slú¾i k zoraïovaniu tabuliek.</dd><br><br></li>
+    <li><i>style.css</i><br><dd>stylesheet</dd><br><br></li>
+    <li><i>welcome.php</i><br><dd>po prihlásení skontroluje pou¾ívateµa a presmeruje na home.php.</dd><br><br></li>
+</p>
+<h2>Model prípadov u¾itia</h2>
 
-<h2>Instalace</h2>
+<img src="http://www.stud.fit.vutbr.cz/~xdudla00/IIS/model.png" alt="Model prípadov u¾itia"></img>
+
+<h2>In¹talácia</h2>
 <ul>
-<li>Struènì popi¹te postup instalace na server</li>
-<li>Softwarové po¾adavky (verze PHP apod.)</li>
-<li>Jak rozbalit, konfigurovat, inicializovat databází, ...</li>
+<li>Skripty a súbory z archívu ulo¾íme (rozbalíme) so zachovaním adresárovej ¹truktúry do zlo¾ky ~/WWW/ respektíve do zlo¾ky ktorá patrí webovému serveru.</li>
+<li>Pomocou phpMyAdmin importujeme databázu do databázového servera zo súboru iis_db.sql</li> <!--<a href="https://github.com/Tiboris/IIS/blob/master/iis_db.sql"></a> -->
+<li>V súbore config.php upravíme hodnoty premenných <i>DB_SERVER</i>, <i>DB_USERNAME</i>, <i>DB_PASSWORD</i> a <i>DB_DATABASE</i> pre pripojenie na databázový server kde je importovaná na¹a databáza.</li>
 </ul>
-
-<h2>Známé problémy</h2>
-<p>Zde popi¹te, které body zadání (IDS a IIS) nejsou implementovány a z jakého dùvodu. Napø. &bdquo;Z èasových dùvodù nebyla implementována správa u¾ivatelù.&rdquo; Pomù¾ete tím zrychlit opravování, kdy¾ neimplementované funkce nebudeme muset dlouze hledat.</p>
 
 </body>
 </html>

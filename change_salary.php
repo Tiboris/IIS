@@ -13,7 +13,12 @@
 		$sql = "SELECT * FROM zamestnanci";
 		$result = mysqli_query($db, $sql);
 		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		echo "Plat zmenený na ${_POST['salary']}!<br>";
+		if ($result) {
+			echo "<script>alert('Plat zmenený na ${_POST['salary']} !')</script>";
+		}
+		else {
+			echo "<script>alert('Plat sa nepodarilo zmeniť')</script>";
+		}
 	}
 ?>
 <form action="" method="POST">

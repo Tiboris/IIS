@@ -8,14 +8,21 @@
 	$result = mysqli_query($db, $sql);
 	$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	if (isset($_POST['submit'])) {
-		if ($_POST['veduci'] != 1) {$_POST['veduci'] = 0;}
+		if (!isset($_POST['veduci'])) {$_POST['veduci'] = 0;}
 		unset($_POST['submit']);
+		//set default values
+		if (empty($_POST['cislo'])) {$_POST['cislo'] = 9;}
+		if (empty($_POST['ulica'])) {$_POST['ulica'] = 'Kolejni';}
+		if (empty($_POST['mesto'])) {$_POST['mesto'] = 'Brno';}
+		if (empty($_POST['psc'])) {$_POST['psc'] = '61200';}
 		$sql = "INSERT INTO zamestnanci (r_cislo, login, pass, meno, priezvisko, ulica, cislo, mesto, psc, plat, veduci) VALUES ('${_POST['r_cislo']}', '${_POST['login']}', '${_POST['pass']}', '${_POST['meno']}', '${_POST['priezvisko']}', '${_POST['ulica']}', ${_POST['cislo']}, '${_POST['mesto']}', '${_POST['psc']}', ${_POST['plat']}, ${_POST['veduci']})";
 		$result = mysqli_query($db, $sql);
-		$sql = "SELECT * FROM zamestnanci";
-		$result = mysqli_query($db, $sql);
-		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-		echo "Zamestnanec ${_POST['meno']} ${_POST['priezvisko']} pridaný!<br>";
+		if ($result) {
+			echo "<script>alert('Zamestnanec ${_POST['meno']} ${_POST['priezvisko']} pridaný!')</script>";
+		}
+		else {
+			echo "<script>alert('Zamestnanca sa nepodarilo pridať')</script>";
+		}
 	}
 ?>
 <form action="" method="POST">

@@ -212,28 +212,29 @@ INSERT INTO `objednavky` (`id_obj`, `datum`, `suma`, `r_cislo`, `id_dod`) VALUES
 
 CREATE TABLE `ponukaju` (
   `id_dod` int(11) NOT NULL,
-  `id_syr` int(11) NOT NULL
+  `id_syr` int(11) NOT NULL,
+  `cena_za_kg` decimal(5,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Sťahujem dáta pre tabuľku `ponukaju`
 --
 
-INSERT INTO `ponukaju` (`id_dod`, `id_syr`) VALUES
-(1, 1),
-(2, 1),
-(1, 2),
-(5, 3),
-(4, 4),
-(8, 5),
-(9, 5),
-(1, 6),
-(2, 6),
-(7, 8),
-(1, 9),
-(10, 9),
-(6, 10),
-(7, 11);
+INSERT INTO `ponukaju` (`id_dod`, `id_syr`, `cena_za_kg`) VALUES
+(1, 1, 3.5),
+(2, 1, 2.8),
+(1, 2, 3.9),
+(5, 3, 3.5),
+(4, 4, 4.4),
+(8, 5, 5.2),
+(9, 5, 4.2),
+(1, 6, 2.8),
+(2, 6, 6.3),
+(7, 8, 4.6),
+(1, 9, 5.2),
+(10, 9, 8.7),
+(6, 10, 6.5),
+(7, 11, 3.8);
 
 -- --------------------------------------------------------
 
@@ -246,7 +247,7 @@ CREATE TABLE `syry` (
   `nazov` varchar(30) NOT NULL,
   `typ` varchar(20) NOT NULL,
   `zivocich` varchar(20) NOT NULL,
-  UNIQUE (nazov)
+  UNIQUE (nazov, typ, zivocich)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

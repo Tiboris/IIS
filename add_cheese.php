@@ -11,13 +11,27 @@
 		unset($_POST['submit']);
 		$sql = "INSERT INTO syry (nazov, typ, zivocich ) VALUES ('${_POST['nazov']}', '${_POST['typ']}', '${_POST['zivocich']}')";
 		$result = mysqli_query($db, $sql);
-		$last_id = mysqli_insert_id($db);
-		$sql = "INSERT INTO ponukaju (id_dod, id_syr) VALUES (${_POST['dodavatel']}, $last_id)";
+		if (!$result) {
+			$sql = "SELECT id_syr FROM syry WHERE nazov = '${_POST['nazov']}' AND typ = '${_POST['typ']}' AND zivocich = '${_POST['zivocich']}'";
+			$result = mysqli_query($db, $sql);
+			$last_id = mysqli_fetch_all($result, MYSQLI_ASSOC);
+			$last_id = $last_id[0];
+			$last_id = $last_id['id_syr'];
+		}
+		else {
+			$last_id = mysqli_insert_id($db);
+		}
+		$sql = "INSERT INTO ponukaju (id_dod, id_syr, cena_za_kg) VALUES (${_POST['dodavatel']}, $last_id, ${_POST['cena']} )";
 		$result = mysqli_query($db, $sql);
 		if ($result) {
-			echo "Syr ${_POST['meno']} od dodávateľa ${_POST['priezvisko']} bol pridaný!<br>";
+			$sql = "SELECT nazov FROM dodavatelia WHERE id_dod = ${_POST['dodavatel']}";
+			$result = mysqli_query($db, $sql);
+			$dod = mysqli_fetch_all($result, MYSQLI_ASSOC);
+			$dod = $dod[0];
+			$dod = $dod['nazov'];
+			echo "<script>alert('Syr ${_POST['nazov']} od dodávateľa $dod bol pridaný!');</script>";
 		} else {
-			echo "<h3>Chyba! Skontrolujte pripojenie k databáze a skúste znova.</h3><br>";
+			echo "<script>alert('Chyba! Skontrolujte údaje alebo pripojenie k databáze a skúste znova.');</script>";
 		}
 	}
 ?>
@@ -27,7 +41,7 @@
 		<td>
 			<table>
 				<tr>
-					<td>Dodávateľ:</td>
+					<td>* Dodávateľ:</td>
 				</tr>
 				<tr>
 					<td>
@@ -45,30 +59,42 @@
 		<td>
 			<table>
 				<tr>
-					<td>Názov syra:</td>
+					<td>* Názov syra:</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="nazov" maxlength="30" placeholder="Niva" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"> *</td>
-				</tr>
-			</table>
-		</td>
-		<td>
-			<table>
-				<tr>
-					<td>Typ syra:</td>
-				</tr>
-				<tr>
-					<td><input type="text" name="typ" maxlength="20" placeholder="plesnivý" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"> *</td>
+					<td><input type="text" name="nazov" maxlength="30" placeholder="Niva" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"></td>
 				</tr>
 			</table>
 		</td>
 		<td>
 			<table>
 				<tr>
-					<td>Živočích:</td>
+					<td>* Typ syra:</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="zivocich" maxlength="20" placeholder="krava" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"> *</td>
+					<td><input type="text" name="typ" maxlength="20" placeholder="plesnivý" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"></td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td>* Cena za kilogram: (€)</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="number" name="cena" min="1" placeholder="4.3" value="4.3" required="yes" step="0.01">
+					</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td>* Živočích:</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="zivocich" maxlength="20" placeholder="krava" required="yes" pattern="[a-zA-ZľščťžýáíéôäúňůĽŠČŤŽÝÁÍÉÚÄÔŮ]+"></td>
 				</tr>
 			</table>
 		</td>

@@ -16,11 +16,16 @@
 		} else {
 			$sql = "UPDATE zamestnanci WHERE r_cislo='${_POST['employees']}' SET login='' AND heslo='' AND plat=0 AND veduci=0";
 			$result = mysqli_query($db, $sql);
-			if (! $result) { echo "<h3>Chyba! Skontrolujte pripojenie k databáze a skúste znova.</h3><br>"; break;}
+			if (! $result) { echo "<script>alert('Zamestnanca sa nepodarilo vyhodiť')</script>"; break;}
 			$sql = "SELECT * FROM zamestnanci WHERE NOT login=''";
 			$result = mysqli_query($db, $sql);
 			$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-			echo "<h3>Zamestnanec s rodným číslom ${_POST['employees']} prepustený!</h3><br>";
+			if ($result) {
+				echo "<script>alert('Zamestnanec s rodným číslom ${_POST['employees']} bol prepustený!')</script>";
+			}
+			else {
+				echo "<script>alert('Zamestnanca sa nepodarilo vyhodiť')</script>";
+			}
 		}
 
 	}

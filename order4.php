@@ -2,7 +2,6 @@
 	include('session.php');
 	$_SESSION['hmot_syrov'] = $_POST['hmot'];
 	$_SESSION['tuk_syrov'] = $_POST['tuk'];
-	$
 	$_SESSION['trvan_syrov'] = $_POST['trvan'];
 	$_SESSION['krajiny_syrov'] = $_POST['krajiny'];
 	$sql = "SELECT syry.nazov, syry.id_syr FROM dodavatelia INNER JOIN ponukaju ON dodavatelia.id_dod=ponukaju.id_dod INNER JOIN syry ON ponukaju.id_syr=syry.id_syr WHERE dodavatelia.id_dod=${_SESSION['id_dod']}";
