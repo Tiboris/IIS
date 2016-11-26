@@ -38,7 +38,14 @@
 	</tr>
 	<tr>
 		<td><b>Dodávateľ: </b></td>
-		<td><?php echo $_SESSION['id_dod'] ?></td>
+		<td>
+			<?php
+				$sql = "SELECT dodavatelia.nazov FROM dodavatelia WHERE id_dod=${_SESSION['id_dod']}";
+				$result = mysqli_query($db, $sql);
+				$res = mysqli_fetch_array($result, MYSQLI_ASSOC);
+				echo $res['nazov'];
+			?>
+		</td>
 	</tr>
 	<tr>
 		<td><b>ID objednávky: </b></td>
