@@ -34,7 +34,7 @@
 				<select id="loaf" name="loaves">
 					<?php
 					foreach ($rows as $loaf) { ?>
-						<option value="<?php echo $loaf['id_bochnika'] ?>"><?php echo "ID:${loaf['id_bochnika']}, ${loaf['nazov']}, ${loaf['nazov_syr']}, ${loaf['umiestnenie']}, hmotnosť = ${loaf['akt_hmot']} kg" ?></option>
+						<option value="<?php echo $loaf['id_bochnika'] ?>" <?php if (isset($_POST['loaves']) && $_POST['loaves'] == $loaf['id_bochnika']) echo "selected='true'" ?>><?php echo "ID:${loaf['id_bochnika']}, ${loaf['nazov']}, ${loaf['nazov_syr']}, ${loaf['umiestnenie']}, hmotnosť = ${loaf['akt_hmot']} kg" ?></option>
 					<?php }
 					?>
 				</select>
