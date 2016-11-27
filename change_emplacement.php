@@ -16,10 +16,13 @@
 		}
 		$result = mysqli_query($db, $sql);
 		if ($result) {
-			echo "<script>alert('Bochník s ID:${_POST['loaves']} bol prehodený!')</script>";
+			echo "<script>alert('Bochník s ID:${_POST['loaves']} bol premiestnený!')</script>";
 		} else {
-			echo "<script>alert('Bochník sa nepodarilo prehodiť')</script>";
+			echo "<script>alert('Bochník sa nepodarilo premiestniť')</script>";
 		}
+		$sql = "SELECT bochniky.id_bochnika, bochniky.umiestnenie, syry.nazov as nazov_syr, dodavatelia.nazov , bochniky.akt_hmot FROM bochniky INNER JOIN objednavky ON bochniky.id_obj=objednavky.id_obj INNER JOIN dodavatelia ON dodavatelia.id_dod=objednavky.id_dod INNER JOIN syry ON bochniky.id_syr=syry.id_syr ORDER BY bochniky.id_bochnika";
+		$result = mysqli_query($db, $sql);
+		$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
 	}
 ?>
 <h1>Premiestnenie bochníkov</h1>

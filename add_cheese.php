@@ -83,7 +83,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="number" name="cena" min="1" placeholder="4.3" value="4.3" required="yes" step="0.01">
+						<input type="number" name="cena" min="1" placeholder="4.3" required="yes" step="0.01">
 					</td>
 				</tr>
 			</table>
