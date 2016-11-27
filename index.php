@@ -42,6 +42,7 @@
 			<ul>
 				<li <?php if($_GET['page']=="home"){ echo "class='active'";} ?> ><a href="?page=home"> Home</a></li>
 				<li <?php if($_GET['page']=="add_cheese"){ echo "class='active'";} ?> ><a href="?page=add_cheese">Pridať syr</a></li>
+				<li <?php if($_GET['page']=="change_emplacement"){ echo "class='active'";} ?> ><a href="?page=change_emplacement">Premiestniť bochník</a></li>
 				<li <?php if($_GET['page']=="order"){ echo "class='active'";} ?> ><a href="?page=order"> Objednať</a></li>
 				<li <?php if($_GET['page']=="find"){ echo "class='active'";} ?> ><a href="?page=find"> Hľadať</a></li>
 				<li <?php if($_GET['page']=="loaves" or $_GET['page']=="loaf"){ echo "class='active'";} ?> ><a href="?page=loaves"> Bochníky</a></li>

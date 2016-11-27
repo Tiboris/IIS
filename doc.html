@@ -15,7 +15,7 @@
 <h1>Predajòa so syrmi</h1>
 <h2>Zadanie</h2>
 <dd>
-Navrhnite IS predajni so syrmi, ktorý by mal umo¾ni» evidovanie produktov v predajni a v jej
+Navrhnite IS predajne so syrmi, ktorý by mal umo¾ni» evidovanie produktov v predajni a v jej
 sklade. Ïalej by mal umo¾ni» zamestnancovi objednáva» syry na predajòu a na sklad od rôznych
 dodávateµov. Jedna objednávka mô¾e obsahova» aj viac druhov syrov. Syry sa kategorizujú podµa
 viac kritérií: zeme pôvodu, ¾ivoèícha (kravský, ovèí, kozí, ...), typu (ementálový,
@@ -33,7 +33,7 @@ patia a od kterého dodaváteµa sú.
 	<dt>Autori:</dt>
 	<dd>Patrik Segedy
 	    <a href="mailto:xseged00@stud.fit.vutbr.cz">xseged00@stud.fit.vutbr.cz</a> -
-		správa pou¾ávateµov, pou¾ívateµské rozhranie a databázový subsystém
+		správa pou¾ívateµov, pou¾ívateµské rozhranie a databázový subsystém
 	</dd>
 	<dd>Tibor Dudlák
 	    <a href="mailto:xdudla00@stud.fit.vutbr.cz">xdudla00@stud.fit.vutbr.cz</a> -
@@ -55,28 +55,29 @@ patia a od kterého dodaváteµa sú.
 
 <h2>Implementácia</h2>
 <p>
-    Od zadania sa implementácia lí¹i iba v jednom bode a to tak, ¾e pri ponúkaných syroch je uvedená aj ich cena za kilogram. Pri vytvorení objednávky na bochníky o urèitej hmotnosti sa cena automaticky prepoèíta pre ka¾dý bochník informatívne a celková suma objednávky sa ulo¾í do záznamu pre objednávku.
+    Od zadania sa implementácia lí¹i tak, ¾e v tabuµke zamestnanci sú pridané polia login a heslo a pri ponúkaných syroch je uvedená aj ich cena za kilogram. Pri vytvorení objednávky na bochníky o urèitej hmotnosti sa cena automaticky prepoèíta pre ka¾dý bochník informatívne a celková suma objednávky sa ulo¾í do záznamu pre objednávku.
     <br><br><b>Zoznam súborov s popisom k use case diagramu:</b><br>
-    <li><i>add_cheese.php</i><br><dd>implementácia prípadu u¾itia pridávania syru do systému, syr ktorý do systému pridávame pridáme priamo do ponuky niektorému z na¹ich dodávateµov.</dd><br><br></li>
-    <li><i>add_employee.php</i><br><dd>implementuje pridávanie zamestnanca do systému ktoré mô¾e vykona» iba pracovník, ktorý je v systéme vedený ako vedúci.</dd><br><br></li>
+    <li><i>add_cheese.php</i><br><dd>implementácia prípadu u¾itia pridávania syru do systému, syr ktorý do systému pridávame, pridáme priamo do ponuky niektorému z na¹ich dodávateµov.</dd><br><br></li>
+    <li><i>add_employee.php</i><br><dd>implementuje pridávanie zamestnanca do systému, ktoré mô¾e vykona» iba pracovník, ktorý je v systéme vedený ako vedúci.</dd><br><br></li>
     <li><i>change_salary.php</i><br><dd>vïaka tomuto skriptu mô¾e pracovník, ktorý je v systéme vedený ako vedúci meni» plat ostatným zamestnancom.</dd><br><br></li>
-    <li><i>config.php</i><br><dd>obsahuje informácie potrené k pripojeniu sa k databáze a samotné pripojenie k nej.</dd><br><br></li>
+    <li><i>change_emplacement.php</i><br><dd>tento skript umo¾òuje premiestni» bochník zo skladu na predajòu a naopak.</dd></li>
+    <li><i>config.php</i><br><dd>obsahuje informácie potrebné k pripojeniu sa k databáze a funkciu na pripojenie k nej.</dd><br><br></li>
     <li><i>doc.html</i><br><dd>tento dokument</dd><br><br></li>
-    <li><i>find.php</i><br><dd>obsahuje stránku ktorá slú¾i na vyhµadávanie informácií o bochníkoch podµa kritérií ¹pecifikovaných v zadaní.</dd><br><br></li>
-    <li><i>fire_employee.php</i><br><dd>implementácia use case-u kde má vedúci mo¾nos» prepusti» zamestnanca.</dd><br><br></li>
+    <li><i>find.php</i><br><dd>obsahuje stránku, ktorá slú¾i na vyhµadávanie informácií o bochníkoch podµa kritérií ¹pecifikovaných v zadaní.</dd><br><br></li>
+    <li><i>fire_employee.php</i><br><dd>implementácia use case-u, kde má vedúci mo¾nos» prepusti» zamestnanca.</dd><br><br></li>
     <li><i>home.php</i><br><dd>úvodná stránka</dd><br><br></li>
-    <li><i>iis_db.sql</i><br><dd>sql skrip pre vytvorenie MySQL databázy potrebnej k správnemu fungovaniu webu informaèného systému.</dd><br><br></li>
+    <li><i>iis_db.sql</i><br><dd>sql skrip pre vytvorenie MySQL databázy, potrebnej k správnemu fungovaniu webu informaèného systému.</dd><br><br></li>
     <li><i>images/cheese-flat.png</i><br><dd>logo zobrazujúce sa v µavom hornom rohu informaèného systému.</dd><br><br></li>
-    <li><i>index.php</i><br><dd>táto stránka sa zobrazuje stále a jej obsah v tagu article je dynamicky naèítavaný a následne include-nutý z php súboru podµa po¾iadavkov pou¾ívateµa.</dd><br><br></li>
-    <li><i>loaf.php</i><br><dd>implementuje zobrazovanie informácií o bochníkoch èi to na sklade alebo na predajni podµa výberu pou¾ívateµa v <i>loaves.php</i></dd><br><br></li>
+    <li><i>index.php</i><br><dd>táto stránka sa zobrazuje stále a jej obsah v tagu <b>article</b> je dynamicky naèítavaný a následne include-nutý z php súboru podµa po¾iadaviek pou¾ívateµa.</dd><br><br></li>
+    <li><i>loaf.php</i><br><dd>implementuje zobrazovanie informácií o bochníkoch, èi na sklade alebo na predajni podµa výberu pou¾ívateµa na stránke <i>loaves.php</i></dd><br><br></li>
     <li><i>loaves.php</i><br><dd>umo¾òuje pou¾ívateµovi vybra» zobrazovanie informácií o bochníkoch na predajni alebo sklade.</dd><br><br></li>
     <li><i>login.php</i><br><dd>umo¾òuje prihlásenie sa do systému pomocou pou¾ívateµského mena a hesla.</dd><br><br></li>
-    <li><i>logout.php</i><br><dd>po kliknutí na logout v informaènom systéme v pravom hornom rohu sa pou¾ívateµ odhlási.</dd><br><br></li>
-    <li><i>manage.php</i><br><dd>implementuje výber use case-u pou¾ívateµa s právami vedúceho pre správu zamestnancov.</dd><br><br></li>
-    <li><i>order.php</i><br><dd>umo¾òuje výber dodávateµa od ktorého budeme objednáva» syr/y.</dd><br><br></li>
+    <li><i>logout.php</i><br><dd>po kliknutí na <b>logout</b> v informaènom systéme v pravom hornom rohu sa pou¾ívateµ odhlási a zru¹í <i>session</i>.</dd><br><br></li>
+    <li><i>manage.php</i><br><dd>implementuje use case pre pou¾ívateµa s právami vedúceho pre správu zamestnancov.</dd><br><br></li>
+    <li><i>order.php</i><br><dd>umo¾òuje výber dodávateµa, od ktorého budeme objednáva» syr/y.</dd><br><br></li>
     <li><i>order2.php</i><br><dd>umo¾òuje výber z ponúkaných syra/ov od dodávateµa.</dd><br><br></li>
-    <li><i>order3.php</i><br><dd>mo¾nos» upresnenia objednávky na minimálnu hmotnos» percento tuku a trvanlivos» a krajinu z ktorej je dodávaný syr.</dd><br><br></li>
-    <li><i>order4.php</i><br><dd>zrekapitulovanie objednávky s výpisom cien jednotlivýcg syrov z objednávky a celkovej sumy, mo¾nos» vybra» èi bude dodaný na predajòu alebo rovno do skladu.</dd><br><br></li>
+    <li><i>order3.php</i><br><dd>mo¾nos» upresnenia objednávky na minimálnu hmotnos», percento tuku, trvanlivos» a krajinu z ktorej je dodávaný syr.</dd><br><br></li>
+    <li><i>order4.php</i><br><dd>zrekapitulovanie objednávky s výpisom cien jednotlivých syrov z objednávky a celkovej sumy; mo¾nos» vybra» èi bude dodaný na predajòu alebo rovno do skladu.</dd><br><br></li>
     <li><i>order5.php</i><br><dd>výpis potvrdenej objednávky.</dd><br><br></li>
     <li><i>session.php</i><br><dd>skript ktorý udr¾iava informácie o prihlásenom pou¾ívateµovi</dd><br><br></li>
     <li><i>sorttable.js</i><br><dd>kód stiahnutý z <a href="http://www.kryogenix.org/code/browser/sorttable/">www.kryogenix.org</a> slú¾i k zoraïovaniu tabuliek.</dd><br><br></li>
@@ -86,12 +87,28 @@ patia a od kterého dodaváteµa sú.
 <h2>Model prípadov u¾itia</h2>
 
 <img src="http://www.stud.fit.vutbr.cz/~xdudla00/IIS/model.png" alt="Model prípadov u¾itia"></img>
-
+<p>
+    Use case:<br>
+    <li><i>prida» syr</i><br><dd>add_cheese.php</dd><br></li>
+    <li><i>objedna» na predajòu</i><br><dd>order*.php</dd><br></li>
+    <li><i>objedna» do skladu</i><br><dd>order*.php</dd><br></li>
+    <li><i>hµada» podµa typu</i><br><dd>find.php</dd><br></li>
+    <li><i>hµada» podµa ¾ivoèícha</i><br><dd>find.php</dd><br></li>
+    <li><i>hµada» podµa tuku</i><br><dd>find.php</dd><br></li>
+    <li><i>hµada» podµa krajiny</i><br><dd>find.php</dd><br></li>
+    <li><i>informácie o bochníkoch na predajni</i><br><dd>loaf.php &amp; loaves.php</dd><br></li>
+    <li><i>informácie o bochníkoch na sklade</i><br><dd>loaf.php &amp; loaves.php</dd><br></li>
+    <li><i>prida» bochník na predajòu</i><br><dd>change_emplacement.php</dd><br></li>
+    <li><i>prida» bochník na sklad</i><br><dd>change_emplacement.php</dd><br></li>
+    <li><i>prida» zamestnanca</i><br><dd>manage.php &amp; add_employee.php</dd><br></li>
+    <li><i>vyhodi» zamestnanca</i><br><dd>manage.php &amp; fire_employee.php</dd><br></li>
+    <li><i>zmeni» plat</i><br><dd>manage.php &amp; change_salary.php</dd><br></li>
+</p>
 <h2>In¹talácia</h2>
 <ul>
 <li>Skripty a súbory z archívu ulo¾íme (rozbalíme) so zachovaním adresárovej ¹truktúry do zlo¾ky ~/WWW/ respektíve do zlo¾ky ktorá patrí webovému serveru.</li>
 <li>Pomocou phpMyAdmin importujeme databázu do databázového servera zo súboru iis_db.sql</li> <!--<a href="https://github.com/Tiboris/IIS/blob/master/iis_db.sql"></a> -->
-<li>V súbore config.php upravíme hodnoty premenných <i>DB_SERVER</i>, <i>DB_USERNAME</i>, <i>DB_PASSWORD</i> a <i>DB_DATABASE</i> pre pripojenie na databázový server kde je importovaná na¹a databáza.</li>
+<li>V súbore config.php upravíme hodnoty premenných <i>DB_SERVER</i>, <i>DB_USERNAME</i>, <i>DB_PASSWORD</i> a <i>DB_DATABASE</i> pre pripojenie na databázový server, kde je importovaná na¹a databáza.</li>
 </ul>
 
 </body>
