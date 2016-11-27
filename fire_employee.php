@@ -16,7 +16,6 @@
 			echo "<script>alert('Nemôžete vyhodiť sám seba!')</script>";
 		} else {
 			$sql = "UPDATE zamestnanci SET login=NULL WHERE r_cislo='${_POST['employees']}'";
-			var_dump($sql);
 			$result = mysqli_query($db, $sql);
 			if ($result) {
 				echo "<script>alert('Zamestnanec s rodným číslom ${_POST['employees']} bol prepustený!')</script>";

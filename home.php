@@ -2,7 +2,6 @@
 <div id="home">
 <?php
 	if (isset($_SESSION['login_user'])) {
-		// var_dump($_SESSION);
 	?>
 		<h2>Vitajte <?php echo "${_SESSION['login_user']}, ${_SESSION['meno']} ${_SESSION['priezvisko']}"; ?>!</h2>
 		Teraz môžete pracovať s informačným systémom.
